@@ -64,7 +64,7 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 })
 		var db = firebase.initializeApp({
-        databaseURL: 'https://awesome-56c60.firebaseio.com'
+        databaseURL: 'https://bt3103-nicklaus.firebaseio.com'
       }).database()
       var chartsRef = db.ref('charts')
       new Vue({
@@ -72,7 +72,6 @@ const router = new VueRouter({
        router,
         data: {
           newTodoText: '',
-          username:'anonymous',
          	localBarData: [["Jan", 4], ["Feb", 2], ["Mar", 10], ["Apr", 5], ["May", 3]],
           localLineData: [["Sun", 32], ["Mon", 46], ["Tue", 28]]
         },
