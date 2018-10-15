@@ -17,6 +17,8 @@
 		<router-link to="bar">Bar</router-link>
 		<router-link to="line">Line</router-link>
 	  <router-link to="local">Local</router-link>
+	  <router-link to="sheet1">Sheet1</router-link>
+    <router-link to="sheet2">Sheet2</router-link>
 	</p>
 
     <div v-if="charts.barData2 && currentRoute === '/bar'">
@@ -36,7 +38,18 @@
       Chart: Local Line Data
 		  <line-chart :data="localLineData"></line-chart>
     </div>
+
+    <div v-if="charts.sheet1 && currentRoute === '/sheet1'">
+      Chart: {{charts.sheet1.title}}
+      <bar-chart :data="charts.sheet1.data"></bar-chart>
+    </div>
+
+    <div v-if="charts.sheet2 && currentRoute === '/sheet2'">
+      Chart: {{charts.sheet2.title}}
+      <line-chart :data="charts.sheet2.data"></line-chart>
+    </div>
 	</div>
+
 	<script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 	<script src="https://unpkg.com/chart.js@2.7.2/dist/Chart.bundle.js"></script>
